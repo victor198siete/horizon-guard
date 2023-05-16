@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./dash.component.css'],
 })
 export class DashComponent {
+  isOpen?: boolean = false;
+
+  constructor(){}
+
+  toggleMenu(){
+    this.isOpen = !this.isOpen;
+  }
+
 }

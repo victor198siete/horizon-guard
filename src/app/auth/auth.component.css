@@ -5,3 +5,39 @@ flex: 1;
 height: 1px;
 background: #eee;
 }
+
+.bg-violeta-1{
+  color: #71378e;
+}
+.bg-violeta-50{
+  background-color: #eee7f1;
+}
+.bg-violeta-100{
+  background-color: #d4c3dd;
+}
+.bg-violeta-200{
+  background-color: #b89bc7;
+}
+.bg-violeta-300{
+  background-color: #9c73b0;
+}
+.bg-violeta-400{
+  background-color: #86559f;
+}
+.bg-violeta-500{
+  background-color: #71378e;
+}
+.bg-violeta-600{
+  background-color: #693186;
+}
+.bg-violeta-700{
+  background-color: #5e2a7b;
+}
+.bg-violeta-800{
+  background-color: #542371;
+}
+.bg-violeta-900{
+  background-color: #42165f;
+}
+
+

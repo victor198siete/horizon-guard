@@ -64,7 +64,7 @@ export class AuthComponent {
             this.authError = true;
             setTimeout(()=> {
               this.authError = false
-            },3000);
+            },5000);
             // this.showAlert(message);
           }
         );

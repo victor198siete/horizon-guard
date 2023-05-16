@@ -2,3 +2,27 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+<!--Horizontes Colors-->
+
+color-primary{
+  color: #71378e;
+}
+
+color-secundary{
+  color: #F3E52E;
+}
+
+color-warm{
+  color: #FCA225;
+}
+
+color-contrast{
+  color: #949494;
+}
+
+
+color-light{
+  color: #e1c0f1;
+}
