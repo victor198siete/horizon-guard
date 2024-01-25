@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dash',
@@ -7,11 +8,21 @@ import { Component } from '@angular/core';
 })
 export class DashComponent {
   isOpen?: boolean = false;
+  productosCollapsed = false;
 
-  constructor(){}
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ){}
 
   toggleMenu(){
     this.isOpen = !this.isOpen;
+  }
+
+  toggleProductos() {
+    this.productosCollapsed = !this.productosCollapsed;
+    console.log(this.productosCollapsed);
   }
 
 }

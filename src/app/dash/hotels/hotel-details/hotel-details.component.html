@@ -1,0 +1,31 @@
+<div class="px-4 mb-4 sm:px-6 mb-6 lg:px-8 mb-8">
+  <div class="sm:flex sm:items-center">
+    <div class="flex items-center">
+      <button type="button" class="relative inline-flex items-center rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50 focus:z-10" routerLink="/dash/hotels/">
+        <img src="./../../../../assets/images/icons/back-nav.svg" style="max-width: 24px;">
+      </button>
+      <h1 class="text-base font-semibold leading-6 text-gray-900">Detalles Hotel</h1>
+    </div>
+  </div>
+</div>
+
+<div class="sm:flex">
+  <div class="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
+    <img [src]='hotel?.imagePath' class="w-200">
+  </div>
+  <div>
+    <h4 class="text-lg font-bold">{{hotel?.name}}</h4>
+    <div *ngFor="let amenitie of hotel?.amenities">
+      <span class="badge rounded-pill text-bg-light">{{amenitie}}</span>
+    </div>
+    <p class="mt-1">{{hotel?.description}}</p>
+  </div>
+</div>
+
+
+
+{{hotel?.suplierAgency}}
+{{hotel?.country}}
+{{hotel?.currency}}
+
+{{hotel?.destiny}}

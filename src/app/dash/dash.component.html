@@ -129,7 +129,7 @@
             <ul role="list" class="-mx-2 space-y-1">
               <li>
                 <!-- Current: "bg-indigo-700 text-white", Default: "text-indigo-200 hover:text-white hover:bg-indigo-700" -->
-                <a href="" class="bg-violeta-800 text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold hover:bg-violeta-500 hover:text-white">
+                <a routerLink="/dash/home" class="bg-violeta-800 text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold hover:bg-violeta-500 hover:text-white">
                   <svg class="h-6 w-6 shrink-0 text-indigo-200 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                   </svg>
@@ -137,21 +137,81 @@
                 </a>
               </li>
               <li>
+                <!-- Current: "bg-indigo-700 text-white", Default: "text-indigo-200 hover:text-white hover:bg-indigo-700" -->
+                <a (click)="toggleProductos()" class="bg-violeta-800 text-white group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold hover:bg-violeta-500 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package-search">
+                  <path
+                    d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14" />
+                  <path d="m7.5 4.27 9 5.15" />
+                  <polyline points="3.29 7 12 12 20.71 7" />
+                  <line x1="12" x2="12" y1="22" y2="12" />
+                  <circle cx="18.5" cy="15.5" r="2.5" />
+                  <path d="M20.27 17.27 22 19" />
+                </svg>
+                  Productos
+                </a>
+                <div *ngIf="productosCollapsed">
+                  <ul role="list" class="mx-2 space-y-1">
+                    <li>
+                      <a routerLink="/dash/hotels" class="bg-violeta-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold hover:text-white hover:bg-violeta-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hotel">
+                          <path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z" />
+                          <path d="m9 16 .348-.24c1.465-1.013 3.84-1.013 5.304 0L15 16" />
+                          <path d="M8 7h.01" />
+                          <path d="M16 7h.01" />
+                          <path d="M12 7h.01" />
+                          <path d="M12 11h.01" />
+                          <path d="M16 11h.01" />
+                          <path d="M8 11h.01" />
+                          <path d="M10 22v-6.5m4 0V22" />
+                        </svg>
+                        Hoteles
+                      </a>
+                    </li>
+                    <li>
+                      <a routerLink="/dash/flights" class="bg-violeta-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold hover:text-white hover:bg-violeta-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plane-takeoff">
+                          <path d="M2 22h20" />
+                          <path
+                            d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z" />
+                        </svg>
+                        Vuelos
+                      </a>
+                    </li>
+                    <li>
+                      <a routerLink="/dash/tickets" class="bg-violeta-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold hover:text-white hover:bg-violeta-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ticket">
+                          <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+                          <path d="M13 5v2" />
+                          <path d="M13 17v2" />
+                          <path d="M13 11v2" />
+                        </svg>
+                        Actividades
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <!-- <li>
                 <a href="#" class="bg-violeta-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold hover:text-white hover:bg-violeta-500">
                   <svg class="h-6 w-6 shrink-0 text-indigo-200 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
                   </svg>
                   Team
                 </a>
-              </li>
-              <li>
+              </li> -->
+              <!-- <li>
                 <a href="#" class="bg-purple-800 hover:text-white hover:bg-indigo-700 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
                   <svg class="h-6 w-6 shrink-0 text-indigo-200 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
                   </svg>
                   Projects
                 </a>
-              </li>
+              </li> -->
               <li>
                 <a href="#" class="text-indigo-200 hover:text-white hover:bg-indigo-700 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
                   <svg class="h-6 w-6 shrink-0 text-indigo-200 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -272,7 +332,20 @@
     <main class="py-10">
       <div class="px-4 sm:px-6 lg:px-8">
         <!-- Your content -->
+        <router-outlet></router-outlet>
       </div>
     </main>
   </div>
 </div>
+
+
+<!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package-search">
+  <path
+    d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14" />
+  <path d="m7.5 4.27 9 5.15" />
+  <polyline points="3.29 7 12 12 20.71 7" />
+  <line x1="12" x2="12" y1="22" y2="12" />
+  <circle cx="18.5" cy="15.5" r="2.5" />
+  <path d="M20.27 17.27 22 19" />
+</svg> -->

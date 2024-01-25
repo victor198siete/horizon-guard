@@ -32,3 +32,7 @@
 .bg-violeta-900{
   background-color: #42165f;
 }
+
+a{
+  cursor: pointer;
+}

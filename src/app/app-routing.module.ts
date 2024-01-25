@@ -1,18 +1,19 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
-import { AppComponent } from "./app.component";
 import { AuthComponent } from "./auth/auth.component";
-import { DashComponent } from "./dash/dash.component";
+import { DashModule } from "./dash/dash.module";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
   { path: 'auth', component: AuthComponent },
-  { path: 'dash', component: DashComponent },
+  { path: 'dash',
+    loadChildren: ()=> import('./dash/dash.module').then(m => DashModule)
+  },
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule],
 })
 export class AppRoutingModule {
