@@ -1,7 +1,7 @@
 <div class="px-4 sm:px-6 lg:px-8">
   <div class="sm:flex sm:items-center">
     <div class="sm:flex-auto">
-      <h1 class="text-base font-semibold leading-6 text-gray-900">Hoteles</h1>
+      <h1 class="text-3xl font-semibold leading-6 text-gray-900">Hoteles</h1>
       <p class="mt-2 text-sm text-gray-700">Tabla de Hoteles Disponibles para Booking: Destinos Exclusivos y Comodidades Excepcionales.</p>
     </div>
     <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
@@ -20,7 +20,7 @@
               <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Creado por:</th>
               <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Creado en:</th>
               <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
-                <span class="sr-only">Editar</span>
+                <span class="sr-only">Botones Acción</span>
               </th>
             </tr>
           </thead>
@@ -55,9 +55,9 @@
                         <img src="./../../../../assets/images/icons/view.svg" style="max-width: 24px;">
                       </button>
                       <button type="button" class="relative -ml-px inline-flex items-center rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
-                        <img src="./../../../../assets/images/icons/copy.svg" style="max-width: 28px;">
+                        <img src="./../../../../assets/images/icons/copy.svg" (click)="onCopyHotel(index)" style="max-width: 28px;">
                       </button>
-                      <button type="button" class="relative -ml-px inline-flex items-center rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
+                      <button type="button" class="relative -ml-px inline-flex items-center rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10" (click)="onEditHotel(index)">
                         <img src="./../../../../assets/images/icons/edit.svg" style="max-width: 24px;">
                       </button>
                     </span>

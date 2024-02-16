@@ -9,19 +9,23 @@ import { HotelRoutingModule } from './hotel-routing.module';
 import { HotelsComponent } from './hotels.component';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { HotelCreateComponent } from './hotel-create/hotel-create.component';
+import { HotelEditComponent } from './hotel-edit/hotel-edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    HotelListComponent,
-    HotelItemComponent,
     HotelsComponent,
+    HotelListComponent,
+    HotelCreateComponent,
     HotelDetailsComponent,
-    HotelCreateComponent
+    HotelEditComponent,
+    HotelItemComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    HotelRoutingModule
+    HotelRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class HotelModule { }

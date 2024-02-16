@@ -4,28 +4,57 @@
       <button type="button" class="relative inline-flex items-center rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50 focus:z-10" routerLink="/dash/hotels/">
         <img src="./../../../../assets/images/icons/back-nav.svg" style="max-width: 24px;">
       </button>
-      <h1 class="text-base font-semibold leading-6 text-gray-900">Detalles Hotel</h1>
+      <h1 class="text-3xl font-semibold leading-6 text-gray-900">Hotel {{hotel?.name}}</h1>
     </div>
   </div>
 </div>
 
-<div class="sm:flex">
-  <div class="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
-    <img [src]='hotel?.imagePath' class="w-200">
-  </div>
-  <div>
-    <h4 class="text-lg font-bold">{{hotel?.name}}</h4>
-    <div *ngFor="let amenitie of hotel?.amenities">
-      <span class="badge rounded-pill text-bg-light">{{amenitie}}</span>
+<div class="flex justify-center">
+  <div class="max-w-5xl bg-white border rounded-lg overflow-hidden shadow-lg" style="width: 1200px;">
+    <div class="sm:flex">
+      <div class="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
+        <img [src]='hotel?.imagePath' class="w-80">
+      </div>
+      <div class="px-4">
+        <h4 class="text-xl font-bold mt-8">{{hotel?.country}} / {{hotel?.destiny}}</h4>
+        <h3 class="text-lg">{{hotel?.suplierAgency}}</h3>
+        <div class="flex">
+          <div *ngFor="let amenitie of hotel?.amenities" class="mr-2">
+            <span class="badge rounded-pill text-bg-success">{{amenitie}}</span>
+          </div>
+        </div>
+        <p class="mt-1">{{hotel?.description}}</p>
+        <div class="flex">
+          <div *ngFor="let room of hotel?.roomList" class="mr-2 mt-8">
+            <span class="badge rounded-pill text-bg-success">{{room.name}}</span>
+          </div>
+        </div>
+        <div class="flex">
+          <div *ngFor="let season of hotel?.rate?.seasons" class="mr-2 mt-8">
+            <p class="text-sm">{{season.name}}</p>
+            <p class="text-sm"> Fecha Inicio: {{season.startDate | date : 'shortDate' }} Fecha Final: {{season.endDate  | date : 'shortDate'}}</p>
+          </div>
+        </div>
     </div>
-    <p class="mt-1">{{hotel?.description}}</p>
+    </div>
+    <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+      <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
+        <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm6.39-2.908a.75.75 0 01.766.027l3.5 2.25a.75.75 0 010 1.262l-3.5 2.25A.75.75 0 018 12.25v-4.5a.75.75 0 01.39-.658z" clip-rule="evenodd" />
+        </svg>
+        Watch demo
+      </a>
+      <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
+        <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
+        </svg>
+        Contact sales
+      </a>
+    </div>
   </div>
 </div>
 
 
 
-{{hotel?.suplierAgency}}
-{{hotel?.country}}
-{{hotel?.currency}}
 
-{{hotel?.destiny}}
+

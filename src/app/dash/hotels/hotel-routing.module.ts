@@ -5,6 +5,7 @@ import { HotelsComponent } from './hotels.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { HotelCreateComponent } from './hotel-create/hotel-create.component';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
+import { HotelEditComponent } from './hotel-edit/hotel-edit.component';
 
 const routes: Routes = [
   {
@@ -12,8 +13,9 @@ const routes: Routes = [
       { path: '', component: HotelListComponent },
     ]
   },
+  { path: 'create', component: HotelCreateComponent},
   { path: ':id', component: HotelDetailsComponent },
-  { path: 'create', component: HotelCreateComponent}
+  { path: ':id/edit', component: HotelEditComponent },
 ];
 
 @NgModule({

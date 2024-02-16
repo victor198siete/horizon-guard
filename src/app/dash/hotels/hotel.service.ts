@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Hotel } from './hotel.model'
+import { Hotel, Room, HotelRate, Season } from './index';
 
 @Injectable({
   providedIn: 'root'
@@ -8,43 +8,33 @@ import { Hotel } from './hotel.model'
 export class HotelService {
 
   private hotels: Hotel[] = [
-  { name: 'Barcelo Solymar',
+  {
+    isActive: true,
+    name: 'Barcelo Solymar',
     suplierAgency: 'Barcelo',
-    isActive: true,
-    description: 'Descripción del Hotel Barcelo Solymar',
+    hotelChain: 'Barcelo Group',
+    rating: 4,
+    destiny: 'Varadero',
+    country: 'Cuba',
+    zip: '14000',
+    phone: 53440801,
+    email: 'ventas@barcelo.com',
+    description: 'Descripción del Hotel Barcelo Solymar, Varadero, Cuba.',
     imagePath: './../../../assets/images/hotels/barcelo-solymar.png',
-    rating: '4.5',
     amenities: ['Wi-Fi', 'Piscina', 'Estacionamiento'],
-    destiny: 'Varadero',
-    country: 'Cuba',
-    currency: 'USD',
-    roomList: ['Habitación Estándar', 'Suite Ejecutiva']
-  },
-  { name: 'Melia Internacional',
-    suplierAgency: 'Melia',
-    isActive: true,
-    description: 'Descripción del Hotel Melia Internacional',
-    imagePath: './../../../assets/images/hotels/melia-internacional.png',
-    rating: '4.5',
-    amenities: ['Wi-Fi', 'Piscina', 'Estacionamiento'],
-    destiny: 'Varadero',
-    country: 'Cuba',
-    currency: 'USD',
-    roomList: ['Habitación Estándar', 'Suite Ejecutiva']
-  },
-  { name: 'Sirenis Tropical Varadero',
-    suplierAgency: 'Melia',
-    isActive: false,
-    description: 'Descripción del Hotel Sirenis Tropical Varadero',
-    imagePath: './../../../assets/images/hotels/sirenis-tropical-varadero.png',
-    rating: '4.5',
-    amenities: ['Wi-Fi', 'Piscina', 'Estacionamiento'],
-    destiny: 'Varadero',
-    country: 'Cuba',
-    currency: 'USD',
-    roomList: ['Habitación Estándar', 'Suite Ejecutiva']
-  },
-  ];
+    roomList: [
+      { name: 'Sencilla', allowChild: true, maxPersons: 2, maxChild: 1},
+      { name: 'Doble', allowChild: true, maxPersons: 4, maxChild: 2},
+    ],
+    mealPlan: [
+      {id: '1', name:'Bed and Breakfast', description: 'Bed and Breakfast meal plan description.' }
+    ],
+    rate: {id: '111', seasons: [{id:'112', name:'Temporada Baja', startDate: new Date(), endDate: new Date(new Date().setDate(new Date().getDate() + 3))}]},
+    createdBy: 'Damian Lopez',
+    updatedBy:'',
+    updateDate: new Date(),
+    },
+  ]
 
   getHotels(){
     return this.hotels.slice();
@@ -55,4 +45,15 @@ export class HotelService {
   }
 
   constructor() { }
+
+  copyHotel(index: number){
+    const copiedHotel = this.getHotel(index);
+    this.hotels.push(copiedHotel);
+    console.log(this.hotels);
+  }
+
+
+  saveHotel(hotel: Hotel){
+    console.log(hotel);
+  }
 }

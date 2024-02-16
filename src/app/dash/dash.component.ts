@@ -9,7 +9,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DashComponent {
   isOpen?: boolean = false;
   productosCollapsed = false;
-
+  reservasCollapsed = false;
+  usersCollapsed = false;
+  frontendCollapsed = false;
 
   constructor(
     private router: Router,
@@ -20,9 +22,20 @@ export class DashComponent {
     this.isOpen = !this.isOpen;
   }
 
+  toggleReservas(){
+    this.reservasCollapsed = !this.reservasCollapsed;
+  }
+
   toggleProductos() {
     this.productosCollapsed = !this.productosCollapsed;
-    console.log(this.productosCollapsed);
+  }
+
+  toggleUsers() {
+    this.usersCollapsed = !this.usersCollapsed;
+  }
+
+  toggleFrontend() {
+    this.frontendCollapsed = !this.frontendCollapsed;
   }
 
 }
